@@ -6,7 +6,7 @@ def computeCoverage(fileList):
     covered = 0
     missedBranches = 0
     coveredBranches = 0
-    
+
     for filename in fileList:
         try:
             with open(filename, newline='') as csvfile:
@@ -23,7 +23,7 @@ def computeCoverage(fileList):
         except Exception as e:
             print(f"Error processing file {filename}: {str(e)}")
             return (0, 0)
-    
+
     return (
         calculatePercentage(covered, missed),
         calculatePercentage(coveredBranches, missedBranches)
