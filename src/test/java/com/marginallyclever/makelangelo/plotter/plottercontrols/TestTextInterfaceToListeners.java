@@ -1,5 +1,4 @@
 package com.marginallyclever.makelangelo.plotter.plottercontrols;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.awt.event.ActionEvent;
