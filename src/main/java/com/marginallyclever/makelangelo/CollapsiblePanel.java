@@ -13,7 +13,7 @@ import java.awt.event.*;
 public class CollapsiblePanel extends JPanel {
 	private String title;
     private final TitledBorder border;
-    final JPanel innerPanel;
+    private final JPanel innerPanel;
     private final Window parentWindow;
     private Dimension previousDimension;
     private final int heightCollapsibleComponent;
@@ -215,12 +215,9 @@ public class CollapsiblePanel extends JPanel {
         cpanel.add(i);
         cpanel.add(j);
 
-
-
         frame.setPreferredSize(new Dimension(600, 90));
         frame.add(jPanel);
         frame.pack();
         frame.setVisible(true);
-
     }
 }
