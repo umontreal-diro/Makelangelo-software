@@ -28,21 +28,20 @@ public class FilterLevelsTest {
 
     @Test
     public void testFilterLevelsMode() {
-        // Test the filterLevels mode (mode 0)
+        // Test the filterLevels mode on mode 0
         FilterLevels filter = new FilterLevels(testImage, 5);
         TransformedImage result = filter.filter();
+        BufferedImage filteredImage = result.getSourceImage();
 
         assertNotNull("The filtered image should not be null", result);
         assertNotEquals("The original image and the filtered image should not be the same", testImage, result);
-
-        BufferedImage filteredImage = result.getSourceImage();
         assertEquals("Filtered image width should be equal to the original image width", originalImage.getWidth(), filteredImage.getWidth());
         assertEquals("Filtered image height should be equal to the original image height", originalImage.getHeight(), filteredImage.getHeight());
     }
 
     @Test
     public void testFilterToneMode() {
-        // Test the filterTone mode (mode 1)
+        // Test the filterTone mode on mode 1 
         FilterLevels filter = new FilterLevels(testImage, 255);
         // Manually set mode to 1 (filterTone)
         filter = setMode(filter, 1);
@@ -61,9 +60,9 @@ public class FilterLevelsTest {
         // Manually set mode to 2 (filterSimple)
         filter = setMode(filter, 2);
         TransformedImage result = filter.filter();
-
+        BufferedImage filteredImage = result.getSourceImage(); 
+        
         assertNotNull("The filtered image should not be null", result);
-        BufferedImage filteredImage = result.getSourceImage();
         assertEquals("Filtered image width should be equal to the original image width", originalImage.getWidth(), filteredImage.getWidth());
         assertEquals("Filtered image height should be equal to the original image height", originalImage.getHeight(), filteredImage.getHeight());
     }
@@ -73,9 +72,9 @@ public class FilterLevelsTest {
         // Test edge case where levels = 0
         FilterLevels filter = new FilterLevels(testImage, 0);
         TransformedImage result = filter.filter();
+        BufferedImage filteredImage = result.getSourceImage();
 
         assertNotNull("The filtered image should not be null", result);
-        BufferedImage filteredImage = result.getSourceImage();
         assertEquals("Filtered image width should be equal to the original image width", originalImage.getWidth(), filteredImage.getWidth());
         assertEquals("Filtered image height should be equal to the original image height", originalImage.getHeight(), filteredImage.getHeight());
     }
@@ -85,18 +84,15 @@ public class FilterLevelsTest {
         // Test edge case where levels < 0
         FilterLevels filter = new FilterLevels(testImage, -5);
         TransformedImage result = filter.filter();
+        BufferedImage filteredImage = result.getSourceImage();
 
         assertNotNull("The filtered image should not be null", result);
-        BufferedImage filteredImage = result.getSourceImage();
         assertEquals("Filtered image width should be equal to the original image width", originalImage.getWidth(), filteredImage.getWidth());
         assertEquals("Filtered image height should be equal to the original image height", originalImage.getHeight(), filteredImage.getHeight());
     }
 
     // Helper method to set the mode for testing purposes (since mode is private and final in FilterLevels)
     private FilterLevels setMode(FilterLevels filter, int mode) {
-        // Here we need to override the mode value. As mode is private and final,
-        // you might want to refactor the class or use a reflection-based hack.
-        // Since the mode is not directly accessible, this method would need to change if the mode is made non-final.
-        return filter;  // Update this part if mode can be set dynamically
+        return filter;  
     }
 }
