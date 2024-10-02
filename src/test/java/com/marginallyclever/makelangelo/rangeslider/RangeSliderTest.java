@@ -3,13 +3,18 @@ package com.marginallyclever.makelangelo.rangeslider;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit test class for RangeSlider.
+ */
 public class RangeSliderTest {
 
-
+    /**
+     * Test that checks if setting the upper value out of range is handled correctly.
+     */
     @Test
     public void testSetUpperValueOutOfRange() {
-        RangeSlider slider = new RangeSlider(0, 100);
-        slider.setUpperValue(150);  // Excede el máximo
-        assertEquals(100, slider.getUpperValue(), "El valor superior no debería ser mayor que el máximo permitido.");
+        RangeSlider slider = new RangeSlider(0, 100);  // Create a RangeSlider with a range from 0 to 100.
+        slider.setUpperValue(150);  // Exceeds the maximum value of 100.
+        assertEquals(100, slider.getUpperValue(), "The upper value should not exceed the allowed maximum.");
     }
 }
