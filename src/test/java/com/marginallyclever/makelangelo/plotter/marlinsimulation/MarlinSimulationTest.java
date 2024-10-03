@@ -15,7 +15,7 @@ import javax.vecmath.Vector3d;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-class MarlinSimulationTest {
+public  class MarlinSimulationTest {
     /**
      * Test multiple methods related to buffer operations and recalculate methods.
      * recalculateAcceleration();
