@@ -27,7 +27,6 @@ module com.marginallyclever.makelangelo {
     opens com.marginallyclever.makelangelo.makeart.io;
     opens com.marginallyclever.makelangelo.plotter.plottercontrols;
     opens com.marginallyclever.makelangelo.turtle;
-    opens com.marginallyclever.makelangelo.plotter.marlinsimulation to org.junit.platform.commons;
 
     exports com.marginallyclever.communications;
     exports com.marginallyclever.convenience.log to ch.qos.logback.core;
