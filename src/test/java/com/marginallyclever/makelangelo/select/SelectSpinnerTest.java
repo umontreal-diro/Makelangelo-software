@@ -12,37 +12,32 @@ public class SelectSpinnerTest {
 
     @BeforeEach
     public void setUp() {
-        // Arrange: Initialize the SelectSpinner with sample values
+        // Initialize the SelectSpinner with sample values
         selectSpinner = new SelectSpinner("testSpinner", "Test Spinner", 0, 10, 5);
     }
 
+
+
     @Test
-    public void testSetAndGetValue() {
-        // Act: Get the initial value
-        int initialValue = selectSpinner.getValue();
+    public void testGetValue() {
+        // Check the initial value returned by getValue()
+        assertThat(selectSpinner.getValue()).isEqualTo(5);
 
-        // Assert: Check the initial value
-        assertThat(initialValue).isEqualTo(5);
-
-        // Act: Set a new value and get it
+        // Change the value and check again
         selectSpinner.setValue(7);
-        int updatedValue = selectSpinner.getValue();
-
-        // Assert: Verify the updated value
-        assertThat(updatedValue).isEqualTo(7);
-
-        // Act: Set another value and get it
-        selectSpinner.setValue(3);
-        int newValue = selectSpinner.getValue();
-
-        // Assert: Verify the new value
-        assertThat(newValue).isEqualTo(3);
-
-        // Act: Set a different value and get it
-        selectSpinner.setValue(10);
-        int finalValue = selectSpinner.getValue();
-
-        // Assert: Verify the final value
-        assertThat(finalValue).isEqualTo(10);
+        assertThat(selectSpinner.getValue()).isEqualTo(7);
     }
+
+    @Test
+    public void testSetValue() {
+        // Set a new value
+        selectSpinner.setValue(3);
+        assertThat(selectSpinner.getValue()).isEqualTo(3); // Verify the value is updated
+
+        // Set another value
+        selectSpinner.setValue(10);
+        assertThat(selectSpinner.getValue()).isEqualTo(10); // Verify the new value
+    }
+
+
 }

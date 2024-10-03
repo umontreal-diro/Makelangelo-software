@@ -13,13 +13,8 @@ public class RangeSliderTest {
      */
     @Test
     public void testSetUpperValueOutOfRange() {
-        // Arrange
         RangeSlider slider = new RangeSlider(0, 100);  // Create a RangeSlider with a range from 0 to 100.
-
-        // Act
         slider.setUpperValue(150);  // Exceeds the maximum value of 100.
-
-        // Assert
         assertEquals(100, slider.getUpperValue(), "The upper value should not exceed the allowed maximum.");
     }
 }

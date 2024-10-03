@@ -26,13 +26,13 @@ import java.util.prefs.Preferences;
  */
 public class PreviewPanel extends GLJPanel implements GLEventListener {
 	private static final Logger logger = LoggerFactory.getLogger(PreviewPanel.class);
-
+	
 	// Use debug pipeline?
 	private static final boolean DEBUG_GL_ON = false;
 	private static final boolean TRACE_GL_ON = false;
 
 	private final List<PreviewListener> previewListeners = new ArrayList<>();
-
+	
 	private Camera camera;
 
 	public Color backgroundColor = new Color(255-67,255-67,255-67);
@@ -59,7 +59,7 @@ public class PreviewPanel extends GLJPanel implements GLEventListener {
 
 	public PreviewPanel() {
 		super();
-
+		
 		try {
 			logger.debug("  get GL capabilities...");
 			GLProfile glProfile = GLProfile.getDefault();
@@ -99,7 +99,7 @@ public class PreviewPanel extends GLJPanel implements GLEventListener {
 				repaint();
 			}
 		});
-
+		
 		// remember button states for when we need them.
 		addMouseListener(new MouseAdapter() {
 
@@ -115,8 +115,8 @@ public class PreviewPanel extends GLJPanel implements GLEventListener {
 				buttonPressed = MouseEvent.NOBUTTON;
 			}
 		});
-
-
+		
+		
 		// left click + drag to move the camera around.
 		addMouseMotionListener(new MouseAdapter() {
 			@Override
@@ -148,7 +148,7 @@ public class PreviewPanel extends GLJPanel implements GLEventListener {
 				setTipXY();
 			}
 		});
-
+		
 		// start animation system
 		logger.debug("  starting animator...");
 		animator = new FPSAnimator(1);
@@ -159,18 +159,18 @@ public class PreviewPanel extends GLJPanel implements GLEventListener {
 	public void addListener(PreviewListener arg0) {
 		previewListeners.add(arg0);
 	}
-
+	
 	public void removeListener(PreviewListener arg0) {
 		previewListeners.remove(arg0);
 	}
-
+	
 	/**
 	 * Set up the correct projection so the image appears in the right location and aspect ratio.
 	 */
 	@Override
 	public void reshape(GLAutoDrawable glautodrawable, int x, int y, int width, int height) {
 		GL2 gl2 = glautodrawable.getGL().getGL2();
-
+		
 		camera.setWidth(width);
 		camera.setHeight(height);
 
@@ -189,7 +189,7 @@ public class PreviewPanel extends GLJPanel implements GLEventListener {
 		Vector2d cursorInSpace = new Vector2d(mouseX-w2, mouseY-h2);
 		cursorInSpace.scale(1.0/z);
 		return new Vector2d(camera.getX()+cursorInSpace.x,
-				-(camera.getY()+cursorInSpace.y));
+							-(camera.getY()+cursorInSpace.y));
 	}
 
 	private void setTipXY() {
@@ -222,7 +222,7 @@ public class PreviewPanel extends GLJPanel implements GLEventListener {
 				logger.error("Failed to init OpenGL trace", e);
 			}
 		}
-
+		
 		glu = GLU.createGLU(gl);
 	}
 
@@ -248,11 +248,11 @@ public class PreviewPanel extends GLJPanel implements GLEventListener {
 			gl2.glDisable(GL2.GL_POLYGON_SMOOTH);
 			gl2.glHint(GL2.GL_POLYGON_SMOOTH_HINT, GL2.GL_FASTEST);
 		}
-
+		
 		// turn on blending
 		gl2.glEnable(GL2.GL_BLEND);
 		gl2.glBlendFunc(GL2.GL_SRC_ALPHA, GL2.GL_ONE_MINUS_SRC_ALPHA);
-
+		
 		paintBackground(gl2);
 		paintCamera(gl2);
 
