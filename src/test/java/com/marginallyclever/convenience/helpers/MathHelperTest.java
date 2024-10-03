@@ -109,5 +109,11 @@ public class MathHelperTest {
         Tuple2d e1 = new Vector2d(0.0,0.0);
         Assertions.assertTrue(MathHelper.equals(d0, d1, e0, e1 ,0.1));
         Assertions.assertFalse(MathHelper.equals(d0, d1, e0, e1 ,0.0));
+
+        // TODO: possible bug?
+        //Tuple2d f0 = new Vector2d(0.0,0.0);
+        //Tuple2d f1 = new Vector2d(2.0,0.0);
+        //Assertions.assertFalse(MathHelper.equals(f0, f1, a0, a1 ,0.1));
+        //Assertions.assertTrue(MathHelper.equals(f0, f1, a0, a1 ,1.1));
     }
 }
