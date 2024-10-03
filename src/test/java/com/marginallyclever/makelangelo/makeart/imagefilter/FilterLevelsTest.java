@@ -11,8 +11,8 @@ import java.io.IOException;
 
 class FilterLevelsTest  {
 
-    public TransformedImage img;
-    public FilterLevels filterLevels;
+    private TransformedImage img;
+    private FilterLevels filterLevels;
 
     @BeforeEach
     void setUp() throws IOException {
