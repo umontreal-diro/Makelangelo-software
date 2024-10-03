@@ -8,7 +8,7 @@ import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CollapsiblePanelTest {
+class CollapsiblePanelTest {
 
     private CollapsiblePanel collapsiblePanel;
     private JFrame testFrame;
