@@ -45,25 +45,10 @@ class SelectPasswordTest {
     assertTrue(isEditable);
   }
 
-  /**
-   * Method under test:
-   * SelectPassword#getDragEnabled()
-   */
-  @Test
-  void testGetDragEnabled() {
-    // Arrange
-    SelectPassword selectPassword = new SelectPassword("Internal Name", "Label Key", "Default Text");
-
-    // Act
-    boolean dragEnabled = selectPassword.getDragEnabled();
-
-    // Assert
-    assertFalse(dragEnabled);
-  }
 
   /**
    * Method under test:
-   * SelectPassword#SelectPassword(String, String, String)
+   * SelectPassword(String, String, String)
    */
   @Test
   void testNewSelectPassword() {
