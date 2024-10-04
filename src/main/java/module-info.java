@@ -27,7 +27,7 @@ module com.marginallyclever.makelangelo {
     opens com.marginallyclever.makelangelo.makeart.io;
     opens com.marginallyclever.makelangelo.plotter.plottercontrols;
     opens com.marginallyclever.makelangelo.turtle;
-    opens com.marginallyclever.makelangelo.select to junit;
+    opens com.marginallyclever.makelangelo.select;
 
     exports com.marginallyclever.communications;
     exports com.marginallyclever.convenience.log to ch.qos.logback.core;
@@ -38,6 +38,7 @@ module com.marginallyclever.makelangelo {
     exports com.marginallyclever.makelangelo.paper;
     exports com.marginallyclever.makelangelo.plotter.plottersettings;
     exports com.marginallyclever.makelangelo.turtle;
+    exports com.marginallyclever.makelangelo.select;
 
     exports com.marginallyclever.makelangelo.donatelloimpl to com.marginallyclever.nodegraphcore;
     exports com.marginallyclever.makelangelo.donatelloimpl.nodes to com.marginallyclever.nodegraphcore;
