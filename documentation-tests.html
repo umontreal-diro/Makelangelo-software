@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+    <style>
+    body {background-color: rgba(229, 68, 148, 0.679);}
+    h2   {color: rgb(255, 255, 255);
+            font-family: verdana;
+            font-size: 120%;
+            font-weight: bold;}
+    p   {color: rgb(4, 4, 4);
+        font-family: verdana;
+        font-size: 100%;}
+
+    b   {color: rgb(125, 6, 113);
+        font-family: verdana;
+        font-size: 100%;}
+
+    ul {color: rgba(234, 206, 230, 0.986);
+            font-family: verdana;
+            font-size: 110%;}
+    </style>
+</head>
+<body>
+
+    <h2>Méthodes Testées</h2>
+    <p><b>makelangelo/rangeslider/RangeSliderTest.java</b></p>
+    <ul>
+        <li>SetUpperValue()</li>
+        <p>
+            On a choisi de tester la méthode setUpperValue dans le contexte de RangeSlider pour nous assurer que les valeurs dépassant la plage autorisée sont correctement gérées. Cela me permet de valider que les limites sont respectées, de maintenir la cohérence de l'état interne de l'objet et de prévenir les erreurs potentielles des utilisateurs.
+        </p>
+    </ul>
+    
+
+    <p><b>makelangelo/plotter/plottercontrols/TestTextInterfaceToListeners.java</b></p>
+    <ul>
+        <li>SendCommand()</li>
+        <li>SendNow()</li>
+        <li>GetCommand()</li>
+    </ul>
+    
+    <p><b>makelangelo/plotter/plotter/plottercontrols/cartesianbuttons.java</b></p>
+    <ul>
+        <li>getZone(int)</li>
+        <p>Nous avons choisi d'effectuer ce test pour nous assurer que le système classe correctement les points en différentes zones, ce qui est essentiel pour manipuler des graphiques ou des contrôles dans un espace cartésien. De plus, la distinction entre le centre et les autres zones est importante pour déterminer le comportement du système.</p>
+        <li>getQuadrant(int)</li>
+        <p>Nous pensons que ce test est nécessaire car dans ce système de contrôle basé sur des coordonnées cartésiennes, identifier le bon quadrant est essentiel pour déterminer la direction ou la position relative d'un point. Si la méthode renvoie des résultats incorrects, cela peut affecter la logique de mouvement ou d'affichage dans l'espace.</p>
+        <li>isCenterZone(int)</li>
+        <p>Nous avons choisi de faire ce test car il est crucial de s'assurer que le système peut différencier la zone centrale des autres zones de l'espace cartésien. Ceci est important car le système dépend d'un emplacement précis dans un espace graphique et de contrôle, garantissant que les calculs de position sont effectués correctement.</p>
+    </ul>
+
+    <p><b>makelangelo/select/SelectPasswordTest.java</b></p>
+    <ul>
+        <li>testGetPassword()</li>
+        <p>Nous avons choisi ce test qui récupère le mot de passe et renvoie la bonne valeur qui lui a été attribuée. Nous trouvons cela important car si la méthode renvoie une valeur incorrecte, cela peut entraîner des problèmes de fonctionnalité ou de sécurité.</p>
+        <li>testIsEditable()</li>
+        <p> Nous avons choisi de tester cette méthode pour nous assurer que le champ du mot de passe peut être modifié, ce qui est crucial pour la convivialité du système. Si cette méthode échoue, des problèmes peuvent survenir dans l'interface utilisateur, empêchant les utilisateurs de modifier le mot de passe lorsqu'ils sont censés le faire.</p>
+    </ul>
+
+</body>
+</html>
