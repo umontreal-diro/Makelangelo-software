@@ -4,13 +4,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class CartesianButtonsTest {
 
+
     /**
-     * Method under test:
-     * isCenterZone(int)
+     * Method under test: isCenterZone(int)
      */
     @Test
     void testIsCenterZone() {
@@ -19,13 +23,12 @@ class CartesianButtonsTest {
         int centerZone = CartesianButtons.ZONE_CENTER;
 
         // Act & Assert
-        assertFalse(CartesianButtons.isCenterZone(nonCenterZone));  // Act & Assert for non-center zone
-        assertTrue(CartesianButtons.isCenterZone(centerZone));      // Act & Assert for center zone
+        assertFalse(CartesianButtons.isCenterZone(nonCenterZone)); // Act & Assert for non-center zone
+        assertTrue(CartesianButtons.isCenterZone(centerZone)); // Act & Assert for center zone
     }
 
     /**
-     * Method under test:
-     * getQuadrant(int)
+     * Method under test: getQuadrant(int)
      */
     @Test
     void testGetQuadrant() {
@@ -40,8 +43,7 @@ class CartesianButtonsTest {
     }
 
     /**
-     * Method under test:
-     * getZone(int)
+     * Method under test: getZone(int)
      */
     @Test
     void testGetZone() {
@@ -54,7 +56,7 @@ class CartesianButtonsTest {
         int result2 = CartesianButtons.getZone(centerZone);
 
         // Assert
-        assertEquals(1, result1);   // Non-center zone
-        assertEquals(-1, result2);  // Center zone
+        assertEquals(1, result1); // Non-center zone
+        assertEquals(-1, result2); // Center zone
     }
 }
