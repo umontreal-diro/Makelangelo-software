@@ -31,5 +31,6 @@ class PlotterTest {
         plotter.turtleMove(m1);
         Point2D expected = new Point2D(0.0, 0.0);
         Assertions.assertEquals(expected.x, plotter.getPos().x);
+        Assertions.assertEquals(expected.y, plotter.getPos().y);
     }
 }

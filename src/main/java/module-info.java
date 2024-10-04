@@ -49,4 +49,7 @@ module com.marginallyclever.makelangelo {
 
     provides com.marginallyclever.nodegraphcore.DAORegistry with
             com.marginallyclever.makelangelo.donatelloimpl.DonatelloRegistry;
+
+    // for IFT3913 testing, good practice?
+    opens com.marginallyclever.makelangelo.plotter;
 }
