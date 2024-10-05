@@ -27,17 +27,31 @@ public class TestStringHelper {
         // Assert: Verify that the output is formatted to three decimal places in US locale
         assertEquals("123.457", result);
     }
-    @Test
+ @Test
     public void testGetElapsedTime() {
-        int seconds = 3661; // 1 hour, 1 minute, 1 second
+        // Test case 1: Vérifie que 3661 secondes se convertissent en "01:01:01"
+        // Arrange
+        int seconds = 3661;
         String expected = "01:01:01";
+
+        // Act
         String result = StringHelper.getElapsedTime(seconds);
+
+        // Assert
         Assertions.assertEquals(expected, result);
 
+        // Test case 2: Vérifie que 0 seconde se convertit en "00:00:00"
+        // Arrange
         seconds = 0;
         expected = "00:00:00";
+
+
+        // Act
         result = StringHelper.getElapsedTime(seconds);
+
+        // Assert
         Assertions.assertEquals(expected, result);
+
 
     }
 }
