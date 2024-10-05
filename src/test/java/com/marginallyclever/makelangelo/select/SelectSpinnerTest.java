@@ -13,8 +13,14 @@ public class SelectSpinnerTest {
      */
     @Test
     public void getValue_initialValue_returnsCorrectValue() {
+        // Arrange
         SelectSpinner spinner = new SelectSpinner("test", "Test Label", 0, 10, 5);
-        assertEquals(5, spinner.getValue());
+
+        // Act
+        int value = spinner.getValue();
+
+        // Assert
+        assertEquals(5, value);
     }
 
     /**
@@ -22,9 +28,15 @@ public class SelectSpinnerTest {
      */
     @Test
     public void setValue_validValue_updatesValue() {
+        // Arrange
         SelectSpinner spinner = new SelectSpinner("test", "Test Label", 0, 10, 5);
+
+        // Act
         spinner.setValue(7);
-        assertEquals(7, spinner.getValue());
+        int value = spinner.getValue();
+
+        // Assert
+        assertEquals(7, value);
     }
 
     /**
@@ -32,7 +44,10 @@ public class SelectSpinnerTest {
      */
     @Test
     public void setValue_valueOutOfRange_throwsIllegalArgumentException() {
+        // Arrange
         SelectSpinner spinner = new SelectSpinner("test", "Test Label", 0, 10, 5);
+
+        // Act & Assert
         assertThrows(IllegalArgumentException.class, () -> spinner.setValue(11));
     }
 
@@ -41,7 +56,10 @@ public class SelectSpinnerTest {
      */
     @Test
     public void setValue_valueBelowRange_throwsIllegalArgumentException() {
+        // Arrange
         SelectSpinner spinner = new SelectSpinner("test", "Test Label", 0, 10, 5);
+
+        // Act & Assert
         assertThrows(IllegalArgumentException.class, () -> spinner.setValue(-1));
     }
 
@@ -50,8 +68,14 @@ public class SelectSpinnerTest {
      */
     @Test
     public void getValue_afterSettingValue_returnsUpdatedValue() {
+        // Arrange
         SelectSpinner spinner = new SelectSpinner("test", "Test Label", 0, 10, 5);
+
+        // Act
         spinner.setValue(3);
-        assertEquals(3, spinner.getValue());
+        int value = spinner.getValue();
+
+        // Assert
+        assertEquals(3, value);
     }
 }

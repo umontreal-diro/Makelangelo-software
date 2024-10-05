@@ -16,7 +16,13 @@ public class W3CColorNamesTest {
      */
     @Test
     public void testGetKnownColorName() {
-        Color color = W3CColorNames.get("blue");
+        // Arrange
+        String colorName = "blue";
+
+        // Act
+        Color color = W3CColorNames.get(colorName);
+
+        // Assert
         assertNotNull(color);
         assertEquals(new Color(0x00, 0x00, 0xFF), color);
     }
@@ -26,7 +32,13 @@ public class W3CColorNamesTest {
      */
     @Test
     public void testGetUnknownColorName() {
-        Color color = W3CColorNames.get("unknowncolor");
+        // Arrange
+        String colorName = "unknowncolor";
+
+        // Act
+        Color color = W3CColorNames.get(colorName);
+
+        // Assert
         assertNull(color);
     }
 
@@ -35,7 +47,13 @@ public class W3CColorNamesTest {
      */
     @Test
     public void testGetKnownColorObject() {
-        String colorName = W3CColorNames.get(new Color(0x00, 0x00, 0xFF));
+        // Arrange
+        Color color = new Color(0x00, 0x00, 0xFF);
+
+        // Act
+        String colorName = W3CColorNames.get(color);
+
+        // Assert
         assertNotNull(colorName);
         assertEquals("blue", colorName);
     }
@@ -45,7 +63,13 @@ public class W3CColorNamesTest {
      */
     @Test
     public void testGetUnknownColorObject() {
-        String colorName = W3CColorNames.get(new Color(0x12, 0x34, 0x56));
+        // Arrange
+        Color color = new Color(0x12, 0x34, 0x56);
+
+        // Act
+        String colorName = W3CColorNames.get(color);
+
+        // Assert
         assertNull(colorName);
     }
 }
