@@ -84,4 +84,25 @@ public class MathHelperTest {
             Assertions.assertFalse(MathHelper.between(a, b, c, epsilon));
         }
     }
+    @Test
+    public void testLerpDouble() {
+        double a = 0.0;
+        double b = 10.0;
+
+        double t = 0.0;
+        double expected = a;
+        double result = MathHelper.lerp(t, a, b);
+        Assertions.assertEquals(expected, result, 1e-9);
+
+        t = 0.5;
+        expected = 5.0;
+        result = MathHelper.lerp(t, a, b);
+        Assertions.assertEquals(expected, result, 1e-9);
+
+        t = 1.0;
+        expected = b;
+        result = MathHelper.lerp(t, a, b);
+        Assertions.assertEquals(expected, result, 1e-9);
+    }
+
 }
