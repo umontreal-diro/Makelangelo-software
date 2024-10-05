@@ -284,4 +284,44 @@ class TurtleTest {
             assertTrue(new Point2D(i * 100, 0).distance(turtle.interpolate(d*(double)i/10.0)) < EPSILON);
         }
     }
+
+    @Test
+    public void setColor() {
+        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
+        turtleMove.setColor(Color.RED);
+        Color result = turtleMove.getColor();
+
+        assertEquals(Color.RED.hashCode(), result.hashCode());
+    }
+
+    @Test
+    public void setDiameter() {
+        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
+        turtleMove.setDiameter(5);
+
+        assertEquals(5, turtleMove.getDiameter());
+    }
+
+    @Test
+    public void equalsSame() {
+        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
+
+        assertTrue(turtleMove.equals(turtleMove));
+    }
+
+    @Test
+    public void equalsOtherClass() {
+        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
+        Turtle turtle = new Turtle();
+
+        assertFalse(turtleMove.equals(turtle));
+    }
+
+    @Test
+    public void TurtleMove() {
+        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
+        TurtleMove turtleMove2 = new TurtleMove(turtleMove);
+
+        assertEquals(turtleMove, turtleMove2);
+    }
 }
