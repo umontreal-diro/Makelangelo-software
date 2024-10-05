@@ -14,4 +14,15 @@ public class TestStringHelper {
         assertEquals("1000001",StringHelper.paddedHex(0x1000001));
         assertEquals("100000",StringHelper.paddedHex(0x100000));
     }
+    @Test
+    public void testFormatFloat_withPositiveNumber() {
+        // Arrange: Create a positive float number
+        float input = 123.4567f;
+
+        // Act: Format the float using formatFloat method
+        String result = StringHelper.formatFloat(input);
+
+        // Assert: Verify that the output is formatted to three decimal places in US locale
+        assertEquals("123.457", result);
+    }
 }
