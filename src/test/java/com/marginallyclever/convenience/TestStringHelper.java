@@ -1,6 +1,8 @@
 package com.marginallyclever.convenience;
 
 import com.marginallyclever.convenience.helpers.StringHelper;
+import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,5 +26,18 @@ public class TestStringHelper {
 
         // Assert: Verify that the output is formatted to three decimal places in US locale
         assertEquals("123.457", result);
+    }
+    @Test
+    public void testGetElapsedTime() {
+        int seconds = 3661; // 1 hour, 1 minute, 1 second
+        String expected = "01:01:01";
+        String result = StringHelper.getElapsedTime(seconds);
+        Assertions.assertEquals(expected, result);
+
+        seconds = 0;
+        expected = "00:00:00";
+        result = StringHelper.getElapsedTime(seconds);
+        Assertions.assertEquals(expected, result);
+
     }
 }
