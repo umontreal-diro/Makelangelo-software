@@ -291,7 +291,7 @@ class TurtleTest {
         turtleMove.setColor(Color.RED);
         Color result = turtleMove.getColor();
 
-        assertEquals(Color.RED.hashCode(), result.hashCode());
+        assertEquals(Color.RED, result);
     }
 
     @Test
