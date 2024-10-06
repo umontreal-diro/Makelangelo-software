@@ -29,8 +29,10 @@ public class SelectPasswordTest {
     public void testEventFiring() {
         SelectPassword selectPassword = new SelectPassword("testPassword", "Test Label", "defaultPass");
         selectPassword.addSelectListener(event -> {
-            assertEquals("defaultPass", new String((char[]) event.getOldValue()), "Old password should be 'defaultPass'");
-            assertEquals("newPass", new String((char[]) event.getNewValue()), "New password should be 'newPass'");
+            String oldPass = event.getOldValue() != null ? new String((char[]) event.getOldValue()) : null;
+            String newPass = event.getNewValue() != null ? new String((char[]) event.getNewValue()) : null;
+            assertEquals("defaultPass", oldPass, "Old password should be 'defaultPass'");
+            assertEquals("newPass", newPass, "New password should be 'newPass'");
         });
 
         selectPassword.setPassword("newPass");
