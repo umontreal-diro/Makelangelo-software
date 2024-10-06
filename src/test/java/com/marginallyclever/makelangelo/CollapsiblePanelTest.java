@@ -13,6 +13,9 @@ import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 import javax.swing.*;
 import java.awt.*;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @DisabledIfEnvironmentVariable(named = "CI", matches = "true", disabledReason = "headless environment")
 public class CollapsiblePanelTest {
     private FrameFixture window;
