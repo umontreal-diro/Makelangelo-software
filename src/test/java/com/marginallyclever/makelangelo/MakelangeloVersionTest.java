@@ -2,48 +2,22 @@ package com.marginallyclever.makelangelo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.Map;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 
 public class MakelangeloVersionTest {
-    private static final Logger logger = LoggerFactory.getLogger(MakelangeloVersionTest.class);
-
     @Test
     public void testGetFullOrLiteVersionStringRelativeToSysEnvDevValue() {
-        String originalDevValue = System.getenv("DEV");
-
-        try {
-            // Test with DEV set to true
-            setEnv("DEV", "true");
+        try (MockedStatic<System> mockedSystem = Mockito.mockStatic(System.class)) {
+            // Mock DEV set to true
+            mockedSystem.when(() -> System.getenv("DEV")).thenReturn("true");
             String version = MakelangeloVersion.getFullOrLiteVersionStringRelativeToSysEnvDevValue();
             Assertions.assertTrue(version.contains(MakelangeloVersion.DETAILED_VERSION), "Should return full version when DEV is true.");
 
-            // Test with DEV set to false
-            setEnv("DEV", "false");
+            // Mock DEV set to false
+            mockedSystem.when(() -> System.getenv("DEV")).thenReturn("false");
             version = MakelangeloVersion.getFullOrLiteVersionStringRelativeToSysEnvDevValue();
             Assertions.assertFalse(version.contains(MakelangeloVersion.DETAILED_VERSION), "Should return lite version when DEV is false.");
-        } finally {
-            // Restore original DEV value
-            setEnv("DEV", originalDevValue);
-        }
-    }
-
-    // Helper method to set environment variables for testing
-    private void setEnv(String key, String value) {
-        try {
-            Map<String, String> env = System.getenv();
-            java.lang.reflect.Field field = env.getClass().getDeclaredField("m");
-            field.setAccessible(true);
-            Map<String, String> writableEnv = (Map<String, String>) field.get(env);
-            if (value == null) {
-                writableEnv.remove(key);
-            } else {
-                writableEnv.put(key, value);
-            }
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            throw new RuntimeException("Failed to set environment variable", e);
         }
     }
 }
