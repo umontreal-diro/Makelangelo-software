@@ -14,7 +14,7 @@ public class SelectReadOnlyTextTest {
 
     @BeforeEach
     public void setUp() {
-        selectReadOnlyText = new SelectReadOnlyText("testReadOnly", "Test Label", "Initial Text");
+        selectReadOnlyText = new SelectReadOnlyText("testReadOnly", "Initial Text");
     }
 
     @Test
