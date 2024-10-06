@@ -10,8 +10,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TurtleMoveTest {
 
     /*
-    Ce test s'assure que la fonction setColor() change correctement la couleur du TurtleMove pour celle désirée. La
-    couleur est contenue dans le champs "x" de l'objet et est initialisée à 1 dans le constructeur.
+    Ce test s'assure que la fonction setColor() change correctement la couleur du TurtleMove pour celle désirée. Dans le
+    contexte d'un "MOVEMENT_TYPE.TOOL_CHANGE", la couleur est contenue dans le champs "x" de l'objet. Cette valeur est
+    initialisée à 1 dans le constructeur.
      */
     @Test
     public void setColor() { 
@@ -25,8 +26,9 @@ public class TurtleMoveTest {
     }
 
    /*
-   Ce test vérifie que la fonction setDiameter() change correctement le diamètre. Le diamètre est contenue dans la
-   variable y et est initialisée à 2 dans le constructeur.
+   Ce test vérifie que la fonction setDiameter() change correctement le diamètre. Dans le contexte d'un
+   "MOVEMENT_TYPE.TOOL_CHANGE", le diamètre est contenue dans la variable y. Cette valeur est initialisée à 2 dans le
+   constructeur.
     */
     @Test
     public void setDiameter() {
