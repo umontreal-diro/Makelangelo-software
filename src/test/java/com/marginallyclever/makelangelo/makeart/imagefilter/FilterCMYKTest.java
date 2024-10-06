@@ -52,16 +52,15 @@ public class FilterCMYKTest {
         int realYellow;
         int realBlack;
 
-        List<SimpleEntry<Integer, int[]>> testColors = new ArrayList<>(Arrays.asList(
-                // rgb, inverted cmyk pairs
-                new SimpleEntry<>(Color.BLACK.getRGB(), new int[]{255, 255, 255, 0}),
-                new SimpleEntry<>(Color.WHITE.getRGB(), new int[]{255, 255, 255, 255}),
-                new SimpleEntry<>(Color.BLUE.getRGB(), new int[]{0, 0, 255, 255}),
-                new SimpleEntry<>(Color.RED.getRGB(), new int[]{255, 0, 0, 255}),
-                new SimpleEntry<>(Color.YELLOW.getRGB(), new int[]{255, 255, 0, 255}),
-                new SimpleEntry<>(Color.GREEN.getRGB(), new int[]{0, 255, 0, 255}),
-                new SimpleEntry<>(Color.CYAN.getRGB(), new int[]{0, 255, 255, 255}),
-                new SimpleEntry<>(Color.MAGENTA.getRGB(), new int[]{255, 0, 255, 255})
+        List<SimpleEntry<Integer, int[]>> testColors = new ArrayList<>(Arrays.asList(   // rgb -> CMYK -> inverted CMYK
+                new SimpleEntry<>(Color.BLACK.getRGB(), new int[]{255, 255, 255, 0}),   // (0,0,0) -> (0,0,0,255) -> (255,255,255,0)
+                new SimpleEntry<>(Color.WHITE.getRGB(), new int[]{255, 255, 255, 255}), // (255,255,255) -> (0,0,0,0) -> (255,255,255,255)
+                new SimpleEntry<>(Color.BLUE.getRGB(), new int[]{0, 0, 255, 255}),      // (0,0,255) -> (255,255,0,0) -> (0,0,255,255)
+                new SimpleEntry<>(Color.RED.getRGB(), new int[]{255, 0, 0, 255}),       // (255,0,0) -> (0,255,255,0) -> (255,0,0,255)
+                new SimpleEntry<>(Color.YELLOW.getRGB(), new int[]{255, 255, 0, 255}),  // (255,255,0) -> (0,0,255,0) -> (255,255,0,255)
+                new SimpleEntry<>(Color.GREEN.getRGB(), new int[]{0, 255, 0, 255}),     // (0,255,0) -> (255,0,255,0) -> (0,255,0,255)
+                new SimpleEntry<>(Color.CYAN.getRGB(), new int[]{0, 255, 255, 255}),    // (0,255,255) -> (255,0,0,0) -> (0,255,255,255)
+                new SimpleEntry<>(Color.MAGENTA.getRGB(), new int[]{255, 0, 255, 255})  // (255,0,255) -> (0,255,0,0) -> (255,0,255,255)
         ));
 
 
