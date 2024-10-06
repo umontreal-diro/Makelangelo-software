@@ -14,7 +14,7 @@ public class NetworkSessionTest {
 
     @BeforeEach
     public void setUp() {
-        networkSession = Mockito.mock(NetworkSession.class, CALLS_REAL_METHODS);
+        networkSession = new NetworkSession(); // Ensure this constructor initializes all necessary fields
         mockListener = mock(NetworkSessionListener.class);
         networkSession.addListener(mockListener);
     }
@@ -22,19 +22,15 @@ public class NetworkSessionTest {
     @Test
     public void testSetNameAndGetName() {
         String expectedName = "TestSession";
-
         networkSession.setName(expectedName);
-
         assertEquals(expectedName, networkSession.getName(), "Name should match the one set");
     }
 
     @Test
     public void testAddAndRemoveListener() {
         NetworkSessionListener anotherListener = mock(NetworkSessionListener.class);
-
         networkSession.addListener(anotherListener);
         networkSession.removeListener(mockListener);
-        
         networkSession.notifyDataReceived("Test data");
         verify(anotherListener, times(1)).networkSessionEvent(any(NetworkSessionEvent.class));
         verify(mockListener, never()).networkSessionEvent(any(NetworkSessionEvent.class));
@@ -43,18 +39,14 @@ public class NetworkSessionTest {
     @Test
     public void testNotifyDataReceived() {
         String data = "Test data";
-
         networkSession.notifyDataReceived(data);
-
         verify(mockListener, times(1)).networkSessionEvent(any(NetworkSessionEvent.class));
     }
 
     @Test
     public void testNotifyDataSent() {
         String data = "Test data";
-
         networkSession.notifyDataSent(data);
-
         verify(mockListener, times(1)).networkSessionEvent(any(NetworkSessionEvent.class));
     }
 }
