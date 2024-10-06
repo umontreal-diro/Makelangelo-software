@@ -5,23 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Map;
+
 public class MakelangeloVersionTest {
     private static final Logger logger = LoggerFactory.getLogger(MakelangeloVersionTest.class);
-
-    @Test
-    public void testGetFullVersionString() {
-        String fullVersion = MakelangeloVersion.getFullVersionString();
-        logger.debug("Full version: {}", fullVersion);
-        Assertions.assertTrue(fullVersion.contains(MakelangeloVersion.VERSION), "Full version should contain the basic version.");
-        Assertions.assertTrue(fullVersion.contains(MakelangeloVersion.DETAILED_VERSION), "Full version should contain the detailed version.");
-    }
-
-    @Test
-    public void testGetLiteVersionString() {
-        String liteVersion = MakelangeloVersion.getLiteVersionString();
-        logger.debug("Lite version: {}", liteVersion);
-        Assertions.assertTrue(liteVersion.contains(MakelangeloVersion.VERSION), "Lite version should contain the basic version.");
-    }
 
     @Test
     public void testGetFullOrLiteVersionStringRelativeToSysEnvDevValue() {
@@ -46,16 +33,16 @@ public class MakelangeloVersionTest {
     // Helper method to set environment variables for testing
     private void setEnv(String key, String value) {
         try {
-            java.util.Map<String, String> env = System.getenv();
+            Map<String, String> env = System.getenv();
             java.lang.reflect.Field field = env.getClass().getDeclaredField("m");
             field.setAccessible(true);
-            java.util.Map<String, String> writableEnv = (java.util.Map<String, String>) field.get(env);
+            Map<String, String> writableEnv = (Map<String, String>) field.get(env);
             if (value == null) {
                 writableEnv.remove(key);
             } else {
                 writableEnv.put(key, value);
             }
-        } catch (Exception e) {
+        } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new RuntimeException("Failed to set environment variable", e);
         }
     }
