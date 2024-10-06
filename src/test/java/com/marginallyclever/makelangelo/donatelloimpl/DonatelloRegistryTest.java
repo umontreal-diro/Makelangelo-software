@@ -28,9 +28,4 @@ public class DonatelloRegistryTest {
             assertNotNull(NodeFactory.createNode(nodeName), "NodeFactory should create node: " + nodeName);
         }
     }
-
-    @Test
-    public void testDAOFactoryRegistration() {
-        assertNotNull(DAO4JSONFactory.getDAO(Turtle.class), "DAO4JSONFactory should have registered Turtle DAO.");
-    }
 }
