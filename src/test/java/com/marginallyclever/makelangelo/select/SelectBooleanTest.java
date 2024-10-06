@@ -32,9 +32,9 @@ public class SelectBooleanTest {
     @Test
     public void testEventFiring() {
         SelectBoolean selectBoolean = new SelectBoolean("testBoolean", "Test Label", false);
-        selectBoolean.addSelectListener((oldValue, newValue) -> {
-            assertFalse((Boolean) oldValue, "Old value should be false");
-            assertTrue((Boolean) newValue, "New value should be true");
+        selectBoolean.addSelectListener(event -> {
+            assertFalse((Boolean) event.getOldValue(), "Old value should be false");
+            assertTrue((Boolean) event.getNewValue(), "New value should be true");
         });
 
         selectBoolean.setSelected(true);
