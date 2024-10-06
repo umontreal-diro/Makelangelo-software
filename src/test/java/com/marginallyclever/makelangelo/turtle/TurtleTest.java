@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.util.List;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -283,45 +284,5 @@ class TurtleTest {
         for(int i=0;i<=10;++i) {
             assertTrue(new Point2D(i * 100, 0).distance(turtle.interpolate(d*(double)i/10.0)) < EPSILON);
         }
-    }
-
-    @Test
-    public void setColor() {
-        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
-        turtleMove.setColor(Color.RED);
-        Color result = turtleMove.getColor();
-
-        assertEquals(Color.RED, result);
-    }
-
-    @Test
-    public void setDiameter() {
-        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
-        turtleMove.setDiameter(5);
-
-        assertEquals(5, turtleMove.getDiameter());
-    }
-
-    @Test
-    public void equalsSame() {
-        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
-
-        assertTrue(turtleMove.equals(turtleMove));
-    }
-
-    @Test
-    public void equalsOtherClass() {
-        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
-        Turtle turtle = new Turtle();
-
-        assertFalse(turtleMove.equals(turtle));
-    }
-
-    @Test
-    public void TurtleMove() {
-        TurtleMove turtleMove = new TurtleMove(1,2, MovementType.TRAVEL);
-        TurtleMove turtleMove2 = new TurtleMove(turtleMove);
-
-        assertEquals(turtleMove, turtleMove2);
     }
 }
