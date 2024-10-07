@@ -29,18 +29,5 @@ class ActionCommandDialogTest {
         int result = dialog.saveResult(pane, choices);
         assertEquals(1, result, "Result should be 1 (index of 'Choice 2').");
     }
-
-
-/*    @Test
-    public void testRun() {
-        dialog.setPromptMessage("Select a color:");
-        dialog.addOption("Red");
-        dialog.addOption("Green");
-        dialog.addOption("Blue");
-
-        dialog.run(null, "Color Selection", (Integer result) -> {
-            assertNotNull(result, "Result should not be null after running the dialog.");
-        });
-    }*/
 }
 

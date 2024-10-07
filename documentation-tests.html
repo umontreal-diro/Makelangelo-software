@@ -39,7 +39,7 @@
         </p>
     </ul>
 
-    <p><a href=" src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/ActionCommandDialogTest.java ">
+    <p><a href=" src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/ActionCommandDialog.java ">
         ActionCommandDialogTest.java</a></p>
     <ul>
         <li>SaveResult_NullSelection</li>
@@ -66,21 +66,54 @@
             fonctionnalité peut éviter des erreurs logiques ou des incohérences dans les données dues à un choix
             incorrect.
         </p>
-        <li>Run</li>
-        <p>
-            Raison de tester cette classe :
-            En testant cette méthode, on peut valider l'ensemble du flux de travail de la boîte de dialogue, y compris
-            l'affichage, la sélection et le mécanisme de rappel, garantissant la fluidité et l'efficacité de
-            l'interaction avec l'utilisateur.
-            On a choisi de tester la méthode Run dans le contexte de ActionCommandDialog pour nous assurer que le
-            résultat n'est pas nul après l'exécution de la boîte de dialogue garantit que la boîte de dialogue peut
-            s'afficher correctement et gérer les entrées de l'utilisateur. Ce test aide les développeurs à confirmer
-            que le choix de l'utilisateur peut être transmis et traité avec succès, contribuant ainsi à améliorer
-            l'expérience utilisateur.
-        </p>
     </ul>
 
-    <p><a href="src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/TestTextInterfaceToListeners.java">
+
+    <p><a href="src/test/java/com/marginallyclever/convenience/helpers/StringHelper.java">
+        StringHelper.java</a></p>
+
+    <ul>
+        <li>FormatFloat</li>
+        <p>
+            Raison de tester cette classe :
+            Ce test s'assure qu'il formate correctement une valeur de type float en une chaîne
+            de caractères avec trois décimales, il est crucial de conserver un nombre précis de décimales.
+            On a choisi de tester la méthode FormatFloat dans le contexte de StringHelper pour garantir que
+            la valeur float est toujours formatée conformément aux attentes, avec une localisation
+            spécifiquement américaine(Locale.US).</p>
+
+
+        <li>FormatDouble</li>
+        <p>
+            Raison de tester cette classe :
+            Cette méthode de test StringHelper.formatDouble() vérifie qu'une valeur de type double est correctement
+            formatée avec trois décimales.
+            On a choisi de tester la méthode FormatDouble dans le contexte de StringHelper pour s'assurer que
+            la méthode produit une sortie formatée de manière cohérente, similaire à formatFloat.</p>
+
+
+        <li>GetElapsedTime</li>
+        <p>
+            Raison de tester cette classe :
+            Cette méthode de test StringHelper.getElapsedTime() vérifie que le nombre de secondes est correctement
+            converti en une chaîne de caractères au format HH:mm:ss.
+            On a choisi de tester la méthode paddedHex dans le contexte de StringHelper pour s'assurer que la conversion
+            du temps est correcte, évitant ainsi toute erreur d'affichage du temps dans les applications.
+        </p>
+
+        <li>PaddedHex</li>
+        <p>
+            Raison de tester cette classe :
+            Cette méthode de test StringHelper.paddedHex() s'assure qu'un nombre entier est correctement converti
+            en une chaîne hexadécimale de 6 caractères, en ajoutant des zéros à gauche si nécessaire.
+            On a choisi de tester la méthode paddedHex dans le contexte de StringHelper pour garantir que
+            les nombres hexadécimaux générés ont toujours une longueur de 6 caractères, ce qui évite  les erreurs liées
+            à des longueurs incorrectes.
+            </p>
+
+    </ul>
+
+    <p><a href="src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/TextInterfaceToListeners.java">
         TextInterfaceToListeners.java</a></p>
 
     <ul>
@@ -134,6 +167,7 @@
         <p>Nous avons choisi ce test qui récupère le mot de passe et renvoie la bonne valeur qui lui a été attribuée.
             Nous trouvons cela important car si la méthode renvoie une valeur incorrecte, cela peut entraîner des
             problèmes de fonctionnalité ou de sécurité.</p>
+
         <li>testIsEditable()</li>
         <p> Nous avons choisi de tester cette méthode pour nous assurer que le champ du mot de passe peut être modifié,
             ce qui est crucial pour la convivialité du système. Si cette méthode échoue, des problèmes peuvent survenir
