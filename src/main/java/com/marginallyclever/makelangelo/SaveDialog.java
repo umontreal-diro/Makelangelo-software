@@ -34,7 +34,7 @@ public class SaveDialog {
 		}
 	}
 
-	public String addExtension(String name, String[] extensions) {
+	public String addExtension(String name, String [] extensions) {
 		for( String e : extensions ) {
 			if(FilenameUtils.getExtension(name).equalsIgnoreCase(e)) return name;
 		}
