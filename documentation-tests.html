@@ -27,38 +27,118 @@
 
 
     <h2>Méthodes Testées</h2>
-    <p><a href=" src/test/java/com/marginallyclever/makelangelo/rangeslider/RangeSliderTest.java ">RangeSliderTest.java</a></p>
+    <p><a href=" src/test/java/com/marginallyclever/makelangelo/rangeslider/RangeSliderTest.java ">RangeSliderTest.java
+    </a></p>
     <ul>
         <li>SetUpperValue()</li>
         <p>
-            On a choisi de tester la méthode setUpperValue dans le contexte de RangeSlider pour nous assurer que les valeurs dépassant la plage autorisée sont correctement gérées. Cela me permet de valider que les limites sont respectées, de maintenir la cohérence de l'état interne de l'objet et de prévenir les erreurs potentielles des utilisateurs.
+            On a choisi de tester la méthode setUpperValue dans le contexte de RangeSlider pour nous assurer que les
+            valeurs dépassant la plage autorisée sont correctement gérées. Cela me permet de valider que les limites
+            sont respectées, de maintenir la cohérence de l'état interne de l'objet et de prévenir les erreurs
+            potentielles des utilisateurs.
         </p>
     </ul>
 
-    <p><a href="src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/TestTextInterfaceToListeners.java">TestTextInterfaceToListeners.java</a></p>
-
+    <p><a href=" src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/ActionCommandDialogTest.java ">
+        ActionCommandDialogTest.java</a></p>
     <ul>
-        <li>SendCommand()</li>
-        <li>SendNow()</li>
-        <li>GetCommand()</li>
+        <li>SaveResult_NullSelection</li>
+        <p>
+            Raison de tester cette classe :
+            La classe ActionCommandDialog est utilisée pour gérer les entrées utilisateur, ce qui constitue une partie
+            essentielle de l'interaction dans de nombreuses applications.Ce test assure la robustesse du code, évitant
+            ainsi les erreurs ou exceptions potentielles dues à l'absence de sélection. En vérifiant ce cas limite,
+            les développeurs peuvent s'assurer que le comportement du programme reste cohérent et fiable dans
+            différentes situations d'utilisation.
+            On a choisi de tester la méthode SaveResult dans le contexte de ActionCommandDialog pour nous assurer que
+            les fonctionnalités de la boîte de dialogue fonctionnent correctement, offrant une bonne expérience
+            utilisateur et améliorant la qualité globale du logiciel.
+        </p>
+        <li>SaveResult_WithChoices</li>
+        <p>
+            Raison de tester cette classe :
+            Étant donné que cette classe concerne les entrées utilisateur et le choix d'options, tester cette classe
+            est crucial pour garantir que le programme répond avec précision aux actions de l'utilisateur. Cela
+            contribue à assurer la fiabilité du logiciel lors du traitement des interactions utilisateur.
+            On a choisi de tester la méthode SaveResult dans le contexte de ActionCommandDialog pour garantir que,
+            lorsque des options sont présentes, la méthode peut correctement identifier et retourner le choix de
+            l'utilisateur. Cela représente une partie essentielle de l'interaction utilisateur, et valider cette
+            fonctionnalité peut éviter des erreurs logiques ou des incohérences dans les données dues à un choix
+            incorrect.
+        </p>
+        <li>Run</li>
+        <p>
+            Raison de tester cette classe :
+            En testant cette méthode, on peut valider l'ensemble du flux de travail de la boîte de dialogue, y compris
+            l'affichage, la sélection et le mécanisme de rappel, garantissant la fluidité et l'efficacité de
+            l'interaction avec l'utilisateur.
+            On a choisi de tester la méthode Run dans le contexte de ActionCommandDialog pour nous assurer que le
+            résultat n'est pas nul après l'exécution de la boîte de dialogue garantit que la boîte de dialogue peut
+            s'afficher correctement et gérer les entrées de l'utilisateur. Ce test aide les développeurs à confirmer
+            que le choix de l'utilisateur peut être transmis et traité avec succès, contribuant ainsi à améliorer
+            l'expérience utilisateur.
+        </p>
     </ul>
 
-    <p><a href="src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/CartesianButtonsTest.java">CartesianButtonsTest.java</a></p>
+    <p><a href="src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/TestTextInterfaceToListeners.java">
+        TextInterfaceToListeners.java</a></p>
+
+    <ul>
+        <li>SendCommand</li>
+        <p>
+            Raison de tester cette classe :
+            Cette méthode de test vérifie si la méthode sendCommand() déclenche correctement un ActionListener et
+            si la commande transmise correspond à celle attendue.
+            On a choisi de tester la méthode SendCommand dans le contexte de TextInterfaceToListeners pour garantir que
+            lorsque la méthode sendCommand() est appelée, les écouteurs enregistrés peuvent traiter correctement
+            la commande transmise. Cela est essentiel pour assurer la bonne transmission et le traitement des
+            événements.</p>
+
+        <li>GetCommand</li>
+        <p>
+            Raison de tester cette classe :
+            Cette méthode de test vérifie si la méthode getCommand() peut récupérer correctement la commande saisie
+            par l'utilisateur.
+            On a choisi de tester la méthode getCommand dans le contexte de TextInterfaceToListeners pour garantir que
+            la commande saisie par l'utilisateur peut être correctement récupérée et traitée, ce qui est très important
+            pour assurer le bon fonctionnement de l'entrée et de la sortie de l'interface utilisateur.</p>
+
+
+    </ul>
+
+
+    <p><a href="src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/CartesianButtonsTest.java">
+        CartesianButtonsTest.java</a></p>
     <ul>
         <li>getZone(int)</li>
-        <p>Nous avons choisi d'effectuer ce test pour nous assurer que le système classe correctement les points en différentes zones, ce qui est essentiel pour manipuler des graphiques ou des contrôles dans un espace cartésien. De plus, la distinction entre le centre et les autres zones est importante pour déterminer le comportement du système.</p>
+        <p>Nous avons choisi d'effectuer ce test pour nous assurer que le système classe correctement les points en
+            différentes zones, ce qui est essentiel pour manipuler des graphiques ou des contrôles dans un espace
+            cartésien. De plus, la distinction entre le centre et les autres zones est importante pour déterminer le
+            comportement du système.</p>
         <li>getQuadrant(int)</li>
-        <p>Nous pensons que ce test est nécessaire car dans ce système de contrôle basé sur des coordonnées cartésiennes, identifier le bon quadrant est essentiel pour déterminer la direction ou la position relative d'un point. Si la méthode renvoie des résultats incorrects, cela peut affecter la logique de mouvement ou d'affichage dans l'espace.</p>
+        <p>Nous pensons que ce test est nécessaire car dans ce système de contrôle basé sur des coordonnées
+            cartésiennes, identifier le bon quadrant est essentiel pour déterminer la direction ou la position relative
+            d'un point. Si la méthode renvoie des résultats incorrects, cela peut affecter la logique de mouvement ou
+            d'affichage dans l'espace.</p>
         <li>isCenterZone(int)</li>
-        <p>Nous avons choisi de faire ce test car il est crucial de s'assurer que le système peut différencier la zone centrale des autres zones de l'espace cartésien. Ceci est important car le système dépend d'un emplacement précis dans un espace graphique et de contrôle, garantissant que les calculs de position sont effectués correctement.</p>
+        <p>Nous avons choisi de faire ce test car il est crucial de s'assurer que le système peut différencier la zone
+            centrale des autres zones de l'espace cartésien. Ceci est important car le système dépend d'un emplacement
+            précis dans un espace graphique et de contrôle, garantissant que les calculs de position sont effectués
+            correctement.</p>
     </ul>
 
-    <p><a  href="src/test/java/com/marginallyclever/makelangelo/select/SelectPasswordTest.java">SelectPasswordTest.java</a></p>
+    <p><a  href="src/test/java/com/marginallyclever/makelangelo/select/SelectPasswordTest.java">
+        SelectPasswordTest.java</a></p>
     <ul>
         <li>testGetPassword()</li>
-        <p>Nous avons choisi ce test qui récupère le mot de passe et renvoie la bonne valeur qui lui a été attribuée. Nous trouvons cela important car si la méthode renvoie une valeur incorrecte, cela peut entraîner des problèmes de fonctionnalité ou de sécurité.</p>
+        <p>Nous avons choisi ce test qui récupère le mot de passe et renvoie la bonne valeur qui lui a été attribuée.
+            Nous trouvons cela important car si la méthode renvoie une valeur incorrecte, cela peut entraîner des
+            problèmes de fonctionnalité ou de sécurité.</p>
         <li>testIsEditable()</li>
-        <p> Nous avons choisi de tester cette méthode pour nous assurer que le champ du mot de passe peut être modifié, ce qui est crucial pour la convivialité du système. Si cette méthode échoue, des problèmes peuvent survenir dans l'interface utilisateur, empêchant les utilisateurs de modifier le mot de passe lorsqu'ils sont censés le faire.</p>
+        <p> Nous avons choisi de tester cette méthode pour nous assurer que le champ du mot de passe peut être modifié,
+            ce qui est crucial pour la convivialité du système. Si cette méthode échoue, des problèmes peuvent survenir
+            dans l'interface utilisateur, empêchant les utilisateurs de modifier le mot de passe lorsqu'ils sont censés
+            le faire.</p>
     </ul>
 
 </body>
