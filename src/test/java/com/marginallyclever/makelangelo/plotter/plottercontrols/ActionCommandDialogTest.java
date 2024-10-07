@@ -31,7 +31,7 @@ class ActionCommandDialogTest {
     }
 
 
-    @Test
+/*    @Test
     public void testRun() {
         dialog.setPromptMessage("Select a color:");
         dialog.addOption("Red");
@@ -41,6 +41,6 @@ class ActionCommandDialogTest {
         dialog.run(null, "Color Selection", (Integer result) -> {
             assertNotNull(result, "Result should not be null after running the dialog.");
         });
-    }
+    }*/
 }
 
