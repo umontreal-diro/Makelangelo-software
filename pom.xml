@@ -377,6 +377,7 @@ It pairs really well with Marlin-polargraph, the code in the brain of the robot 
 			<artifactId>commons-io</artifactId>
 			<version>2.11.0</version>
 		</dependency>
+
 		<!-- https://github.com/java-native/jssc/ -->
 		<dependency>
 			<groupId>io.github.java-native</groupId>
@@ -545,7 +546,14 @@ It pairs really well with Marlin-polargraph, the code in the brain of the robot 
 			<version>1.0.21</version>
 			<scope>compile</scope>
 		</dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -557,4 +565,5 @@ It pairs really well with Marlin-polargraph, the code in the brain of the robot 
 		<maven.compiler.target>${minimum.java.version}</maven.compiler.target>
 		<maven.compiler.release>${minimum.java.version}</maven.compiler.release>
 	</properties>
+
 </project>
