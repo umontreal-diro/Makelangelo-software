@@ -14,8 +14,9 @@ import org.junit.jupiter.api.Test;
 class SelectPasswordTest {
 
   /**
-   * Method under test:
-   * SelectPassword#getPassword()
+   * Test unitaire qui vérifie que la méthode getPassword() retourne correctement le mot de passe par défaut.
+   * On initialise un objet SelectPassword avec un texte par défaut, et on vérifie que la méthode
+   * getPassword() renvoie bien ce texte.
    */
   @Test
   void testGetPassword() {
@@ -30,8 +31,8 @@ class SelectPasswordTest {
   }
 
   /**
-   * Method under test:
-   * SelectPassword#isEditable()
+   * Test unitaire qui vérifie que la méthode isEditable() retourne true, indiquant que le champ de mot de passe
+   * est modifiable par défaut. On crée un objet SelectPassword et on s'assure que la méthode isEditable() renvoie true.
    */
   @Test
   void testIsEditable() {
@@ -47,8 +48,9 @@ class SelectPasswordTest {
 
 
   /**
-   * Method under test:
-   * SelectPassword(String, String, String)
+   * Test unitaire qui vérifie que l'espace colorimétrique de l'arrière-plan reste le même après un assombrissement.
+   * Après avoir créé un objet SelectPassword, on récupère la couleur de l'arrière-plan, puis on compare
+   * les espaces colorimétriques avant et après avoir assombri cette couleur.
    */
   @Test
   void testNewSelectPassword() {

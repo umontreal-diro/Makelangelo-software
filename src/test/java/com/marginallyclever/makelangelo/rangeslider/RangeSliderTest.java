@@ -9,7 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RangeSliderTest {
 
     /**
-     * Test that checks if setting the upper value out of range is handled correctly.
+     * Test unitaire qui vérifie que la valeur supérieure ne dépasse pas la limite maximale du RangeSlider.
+     * On essaie de définir une valeur supérieure hors de portée, et on s'assure qu'elle est limitée à 100.
      */
     @Test
     public void testSetUpperValueOutOfRange() {

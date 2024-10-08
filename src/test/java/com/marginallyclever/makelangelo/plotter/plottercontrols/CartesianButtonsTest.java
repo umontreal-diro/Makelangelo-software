@@ -14,7 +14,9 @@ class CartesianButtonsTest {
 
 
     /**
-     * Method under test: isCenterZone(int)
+     * Test unitaire qui vérifie la méthode isCenterZone(int).
+     * On teste avec deux valeurs : une pour une zone qui n'est pas le centre et une pour la zone centrale.
+     * On s'assure que la méthode retourne false pour une zone non-centrale et true pour la zone centrale.
      */
     @Test
     void testIsCenterZone() {
@@ -28,7 +30,9 @@ class CartesianButtonsTest {
     }
 
     /**
-     * Method under test: getQuadrant(int)
+     * Test unitaire qui vérifie la méthode getQuadrant(int).
+     * On passe un point en paramètre et on vérifie que la méthode retourne 0, indiquant
+     * que le point est dans le premier quadrant ou qu'il n'y a pas de quadrant défini.
      */
     @Test
     void testGetQuadrant() {
@@ -43,7 +47,9 @@ class CartesianButtonsTest {
     }
 
     /**
-     * Method under test: getZone(int)
+     * Test unitaire qui vérifie la méthode getZone(int).
+     * On teste avec deux valeurs : un point dans une zone non-centrale, et un point dans la zone centrale.
+     * La méthode doit retourner 1 pour une zone non-centrale et -1 pour la zone centrale.
      */
     @Test
     void testGetZone() {
