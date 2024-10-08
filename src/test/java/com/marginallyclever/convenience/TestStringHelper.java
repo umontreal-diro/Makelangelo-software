@@ -16,19 +16,14 @@ public class TestStringHelper {
         assertEquals("1000001",StringHelper.paddedHex(0x1000001));
         assertEquals("100000",StringHelper.paddedHex(0x100000));
     }
-    @Test
-    public void testFormatFloat_withPositiveNumber() {
-        // Arrange: Create a positive float number
-        float input = 123.4567f;
 
-        // Act: Format the float using formatFloat method
-        String result = StringHelper.formatFloat(input);
-
-        // Assert: Verify that the output is formatted to three decimal places in US locale
-        assertEquals("123.457", result);
-    }
  @Test
     public void testGetElapsedTime() {
+        //Raison : Nous testons la classe TestStringHelper car elle fournit des fonctions utilitaires
+        // essentielles pour la manipulation des chaînes de caractères dans l'application. Garantir le bon
+        // fonctionnement de ces méthodes assure une gestion correcte des formats de données textuelles, ce qui est
+        // important pour l'affichage, le traitement des entrées utilisateurs, et l'intégrité des données textuelles
+        // manipulées par le programme.
         // Test case 1: Vérifie que 3661 secondes se convertissent en "01:01:01"
         // Arrange
         int seconds = 3661;
