@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ColorHSBTest {
 
+    /* Ce test vérifie le bon fonctionnement du constructeur et S'assure que l'initialisation se fait correctement.*/
     @Test
     public void testColorHSBConstructor() {
         ColorHSB color = new ColorHSB(0.5f, 0.7f, 0.8f);
@@ -14,6 +15,8 @@ public class ColorHSBTest {
         assertEquals(0.8f, color.getBrightness());
     }
 
+    /* Ce test vérifie la méthode set() qui permet de changer les valeurs de hue,
+     * saturation, et brightness après l'initialisation.*/
     @Test
     public void testColorHSBSetMethod() {
         ColorHSB color = new ColorHSB();
@@ -24,7 +27,7 @@ public class ColorHSBTest {
         assertEquals(0.5f, color.getBrightness());
     }
 
-
+    /* Ce test vérifie la méthode equals(), qui compare deux objets ColorHSB.*/
     @Test
     public void testColorHSBEqualsMethod() {
         ColorHSB color1 = new ColorHSB(0.2f, 0.3f, 0.4f);
@@ -35,6 +38,7 @@ public class ColorHSBTest {
         assertNotEquals(color1, color3);
     }
 
+    /* Ce test vérifie la méthode diff(), qui calcule la différence entre deux objets ColorHSB.*/
     @Test
     public void testColorHSBDiffMethod() {
         ColorHSB color1 = new ColorHSB(0.2f, 0.3f, 0.4f);
