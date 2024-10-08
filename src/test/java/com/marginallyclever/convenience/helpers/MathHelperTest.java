@@ -86,6 +86,11 @@ public class MathHelperTest {
     }
  @Test
     public void testLerpDouble() {
+        //Nous testons la classe MathHelper car elle contient des fonctions utilitaires mathématiques
+        // essentielles utilisées dans diverses parties de l'application. Assurer la précision et la fiabilité
+        // de ces méthodes est crucial pour la validité des calculs géométriques et autres opérations mathématiques
+        // effectuées par le programme. En validant ces fonctions, nous évitons la propagation d'erreurs qui
+        // pourraient entraîner des dysfonctionnements importants dans d'autres modules du système.
         // Test case 1: Vérifie que l'interpolation linéaire à t=0.0 retourne a
         // Arrange
         double t = 0.0;
