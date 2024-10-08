@@ -14,6 +14,8 @@ class ActionCommandDialogTest {
         dialog = new ActionCommandDialog();
     }
 
+    /* Teste la méthode saveResult lorsque la sélection est nulle.
+     * Il signifie que la boîte de dialogue est fermée lorsque rien n'est sélectionné.*/
     @Test
     public void testSaveResult_NullSelection() {
         JOptionPane pane = new JOptionPane();
@@ -21,6 +23,9 @@ class ActionCommandDialogTest {
         assertEquals(JOptionPane.CLOSED_OPTION, result, "Result should be CLOSED_OPTION when selection is null.");
     }
 
+    /* Teste la méthode saveResult lorsque des choix sont fournis. La méthode saveResult est appelée après avoir
+     * simulé la sélection de "Choice 2" par l'utilisateur. Le test vérifie que le résultat renvoyé est 1,
+     * ce qui correspond à l'indice de "Choice 2" dans le tableau des choix.*/
     @Test
     public void testSaveResult_WithChoices() {
         JOptionPane pane = new JOptionPane();

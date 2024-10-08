@@ -14,6 +14,7 @@ public class TextInterfaceToListenersTest {
         textInterface = new TextInterfaceToListeners();
     }
 
+    /* Teste la méthode sendCommand pour s'assurer qu'elle envoie la commande correcte via un ActionListener.*/
     @Test
     public void testSendCommand() {
         ActionListener listener = new ActionListener() {
@@ -27,6 +28,7 @@ public class TextInterfaceToListenersTest {
         textInterface.removeActionListener(listener);
     }
 
+    /* Teste la méthode getCommand pour s'assurer qu'elle retourne la commande correcte.*/
     @Test
     public void testGetCommand() {
         textInterface.setCommand("test command");
