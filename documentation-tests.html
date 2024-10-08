@@ -14,11 +14,11 @@
         font-family: verdana;
         font-size: 100%;}
 
-    a   {color: rgb(125, 6, 113);
+    h3,a   {color: rgb(125, 6, 113);
         font-family: verdana;
-        font-size: 100%;}
+        font-size: 80%;}
 
-    ul,li{color: rgba(38, 1, 33, 0.98);
+    ul,li{color: rgba(51, 25, 42, 0.98);
             font-family: verdana;
             font-size: 110%;}
     </style>
@@ -32,8 +32,7 @@
     <h3><a href=" src/test/java/com/marginallyclever/makelangelo/rangeslider/RangeSliderTest.java ">RangeSliderTest.java
     </a></h3>
     <ul>
-        <p>1.</p>
-        <li>SetUpperValue()</li>
+        <li>1. SetUpperValue()</li>
         <p>
             On a choisi de tester la méthode setUpperValue dans le contexte de RangeSlider pour nous assurer que les
             valeurs dépassant la plage autorisée sont correctement gérées. Cela me permet de valider que les limites
@@ -45,8 +44,7 @@
 
     <h3>ActionCommandDialogTest</h3>
     <ul>
-        <p>2.</p>
-        <li>SaveResult_NullSelection</li>
+        <li>2. SaveResult_NullSelection</li>
         <p>
             Raison de tester cette méthode :
             La classe ActionCommandDialog est utilisée pour gérer les entrées utilisateur, ce qui constitue une partie
@@ -58,8 +56,8 @@
             les fonctionnalités de la boîte de dialogue fonctionnent correctement, offrant une bonne expérience
             utilisateur et améliorant la qualité globale du logiciel.
         </p>
-        <p>3.</p>
-        <li>SaveResult_WithChoices</li>
+
+        <li>3. SaveResult_WithChoices</li>
         <p>
             Raison de tester cette méthode :
             Étant donné que cette classe concerne les entrées utilisateur et le choix d'options, tester cette classe
@@ -76,8 +74,7 @@
 
     <h3>StringHelper.java</h3>
     <ul>
-        <p>4.</p>
-        <li>FormatFloat</li>
+        <li>4. FormatFloat</li>
         <p>
             Raison de tester cette méthode :
             Ce test s'assure qu'il formate correctement une valeur de type float en une chaîne
@@ -86,8 +83,8 @@
             la valeur float est toujours formatée conformément aux attentes, avec une localisation
             spécifiquement américaine(Locale.US).</p>
 
-        <p>5.</p>
-        <li>FormatDouble</li>
+
+        <li>5. FormatDouble</li>
         <p>
             Raison de tester cette méthode :
             Cette méthode de test StringHelper.formatDouble() vérifie qu'une valeur de type double est correctement
@@ -95,8 +92,8 @@
             On a choisi de tester la méthode FormatDouble dans le contexte de StringHelper pour s'assurer que
             la méthode produit une sortie formatée de manière cohérente, similaire à formatFloat.</p>
 
-        <p>6.</p>
-        <li>GetElapsedTime</li>
+
+        <li>6. GetElapsedTime</li>
         <p>
             Raison de tester cette méthode :
             Cette méthode de test StringHelper.getElapsedTime() vérifie que le nombre de secondes est correctement
@@ -104,16 +101,13 @@
             On a choisi de tester la méthode paddedHex dans le contexte de StringHelper pour s'assurer que la conversion
             du temps est correcte, évitant ainsi toute erreur d'affichage du temps dans les applications.
         </p>
-
-
-
     </ul>
+
 
     <h3>TextInterfaceToListeners.java</h3>
 
     <ul>
-        <p>7.</p>
-        <li>SendCommand</li>
+        <li>7. SendCommand</li>
         <p>
             Raison de tester cette méthode :
             Cette méthode de test vérifie si la méthode sendCommand() déclenche correctement un ActionListener et
@@ -123,8 +117,8 @@
             la commande transmise. Cela est essentiel pour assurer la bonne transmission et le traitement des
             événements.</p>
 
-        <p>8.</p>
-        <li>GetCommand</li>
+
+        <li>8. GetCommand</li>
         <p>
             Raison de tester cette méthode :
             Cette méthode de test vérifie si la méthode getCommand() peut récupérer correctement la commande saisie
@@ -140,20 +134,21 @@
     <h3><a href="src/test/java/com/marginallyclever/makelangelo/plotter/plottercontrols/CartesianButtonsTest.java">
         CartesianButtonsTest.java</a></h3>
     <ul>
-        <p>9.</p>
-        <li>getZone(int)</li>
+
+        <li>9. getZone(int)</li>
         <p>Nous avons choisi d'effectuer ce test pour nous assurer que le système classe correctement les points en
             différentes zones, ce qui est essentiel pour manipuler des graphiques ou des contrôles dans un espace
             cartésien. De plus, la distinction entre le centre et les autres zones est importante pour déterminer le
             comportement du système.</p>
 
-        <p>10.</p>
-        <li>getQuadrant(int)</li>
+
+        <li>10. getQuadrant(int)</li>
         <p>Nous pensons que ce test est nécessaire car dans ce système de contrôle basé sur des coordonnées
             cartésiennes, identifier le bon quadrant est essentiel pour déterminer la direction ou la position relative
             d'un point. Si la méthode renvoie des résultats incorrects, cela peut affecter la logique de mouvement ou
             d'affichage dans l'espace.</p>
-        <li>isCenterZone(int)</li>
+
+        <li>11. isCenterZone(int)</li>
         <p>Nous avons choisi de faire ce test car il est crucial de s'assurer que le système peut différencier la zone
             centrale des autres zones de l'espace cartésien. Ceci est important car le système dépend d'un emplacement
             précis dans un espace graphique et de contrôle, garantissant que les calculs de position sont effectués
@@ -163,14 +158,13 @@
     <h3><a  href="src/test/java/com/marginallyclever/makelangelo/select/SelectPasswordTest.java">
         SelectPasswordTest.java</a></h3>
     <ul>
-        <p>11.</p>
-        <li>testGetPassword()</li>
+        <li>12. testGetPassword()</li>
         <p>Nous avons choisi ce test qui récupère le mot de passe et renvoie la bonne valeur qui lui a été attribuée.
             Nous trouvons cela important car si la méthode renvoie une valeur incorrecte, cela peut entraîner des
             problèmes de fonctionnalité ou de sécurité.</p>
 
-        <p>12.</p>
-        <li>testIsEditable()</li>
+
+        <li>13. testIsEditable()</li>
         <p> Nous avons choisi de tester cette méthode pour nous assurer que le champ du mot de passe peut être modifié,
             ce qui est crucial pour la convivialité du système. Si cette méthode échoue, des problèmes peuvent survenir
             dans l'interface utilisateur, empêchant les utilisateurs de modifier le mot de passe lorsqu'ils sont censés
@@ -179,8 +173,8 @@
 
     <ul>
         <h3>ColorHSB.java</h3>
-        <p>13.</p>
-        <li>ColorHSBSetMethod()</li>
+
+        <li>14.ColorHSBSetMethod()</li>
         <p>
             Raison de tester cette méthode :
             On a choisi de tester la méthode ColorHSBSetMethod parce qu'elle peut être utilisée pour modifier l'état
@@ -191,8 +185,7 @@
     </ul>
 
     <ul>
-        <p>14.</p>
-        <li>ColorHSBDiffMethod()</li>
+        <li>15. ColorHSBDiffMethod()</li>
         <p>
             Raison de tester cette méthode :
             On a choisi de tester la méthode ColorHSBDiffMethod parce qu'elle est utile pour mesurer à quel point
