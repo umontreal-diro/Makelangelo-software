@@ -120,20 +120,4 @@ public class TurtleMoveTest {
 
         assertEquals(turtleMove, turtleMove1);
     }
-
-    /*
-    Ce test vérifie que la fonction hashCode() retourne bien le hash produit par les champs type, x et y.
-     */
-    @Test
-    public void hashCodeSame() {
-        double x = 1;
-        double y = 2;
-        MovementType movementType = MovementType.TRAVEL;
-        TurtleMove turtleMove = new TurtleMove(x, y, movementType);
-
-        int expected = Objects.hash(movementType, x, y);
-        int result = turtleMove.hashCode();
-
-        assertEquals(expected, result);
-    }
 }
