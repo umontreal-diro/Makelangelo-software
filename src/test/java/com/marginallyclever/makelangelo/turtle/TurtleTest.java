@@ -305,15 +305,16 @@ class TurtleTest {
     }
 
     /*
-    Ce test vérifie que la fonction lock() vérouille bien la tortue;
+    Ce test vérifie que la fonction lock() vérouille bien la tortue.
      */
     @Test
-    public void isLocked() {
+    public void Lock() {
         Turtle turtle = new Turtle();
-        assertFalse(turtle.isLocked());  // S'assure du bon état initial
+        boolean initialStateIsLocked = turtle.isLocked();
 
         turtle.lock();
 
+        assertFalse(initialStateIsLocked);
         assertTrue(turtle.isLocked());
     }
 
@@ -321,13 +322,14 @@ class TurtleTest {
     Ce test vérifie que la fonction unlock() dévérouille bien la tortue.
      */
     @Test
-    public void isUnlocked() {
+    public void Unlock() {
         Turtle turtle = new Turtle();
         turtle.lock();
-        assertTrue(turtle.isLocked());  // S'assure du bon état initial
+        boolean initialStateIsLocked = turtle.isLocked();
 
         turtle.unlock();
 
+        assertTrue(initialStateIsLocked);
         assertFalse(turtle.isLocked());
     }
 
@@ -351,11 +353,11 @@ class TurtleTest {
     @Test
     public void setX() {
         Turtle turtle = new Turtle();
-        double x = 1.2;
+        double newX = 1.2;
 
-        turtle.setX(x);
+        turtle.setX(newX);
 
-        assertEquals(x, turtle.getX());
+        assertEquals(newX, turtle.getX());
     }
 
     /*
@@ -364,10 +366,10 @@ class TurtleTest {
     @Test
     public void setY() {
         Turtle turtle = new Turtle();
-        double y = 3.4;
+        double newY = 3.4;
 
-        turtle.setY(y);
+        turtle.setY(newY);
 
-        assertEquals(y, turtle.getY());
+        assertEquals(newY, turtle.getY());
     }
 }
