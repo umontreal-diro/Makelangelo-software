@@ -24,6 +24,11 @@ public class MainFrameTest {
     private static final int DEFAULT_HEIGHT = 600; // Default height of the window
 
     @BeforeAll
+       public static void setUpClass() {
+           System.setProperty("java.awt.headless", "true");
+           PreferencesHelper.start();
+       }
+    @BeforeAll
     public static void beforeAll() {
         // Initialize the PreferencesHelper before any tests run
         PreferencesHelper.start();
