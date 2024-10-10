@@ -1,0 +1,8 @@
+modules = ["java-graalvm22.3", "python-3.12", "bash"]
+
+[nix]
+channel = "stable-24_05"
+
+[[ports]]
+localPort = 8000
+externalPort = 80
