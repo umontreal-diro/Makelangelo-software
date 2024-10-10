@@ -372,6 +372,8 @@ It pairs really well with Marlin-polargraph, the code in the brain of the robot 
 	</dependencyManagement>
 
 	<dependencies>
+
+
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
