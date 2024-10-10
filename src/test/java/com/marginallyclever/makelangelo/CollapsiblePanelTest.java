@@ -33,7 +33,7 @@ public class CollapsiblePanelTest {
         frame.setSize(new Dimension(600, 400));
         frame.setLocationRelativeTo(null);
         window = new FrameFixture(robot, frame);
-        window.show(); // shows the frame to test
+        window.show(); // affiche la fenêtre à tester
     }
 
     @AfterEach
@@ -43,23 +43,35 @@ public class CollapsiblePanelTest {
 
     @Test
     public void testToggleVisibility() {
+        /*
+        Motivations: Ce test sert à vérifier le comportement d'un panneau rétractable.
+        En effet il doit initiallement être rétracté, puis se développer et afficher ses
+        éléments, puis se rétracter à nouveau à chaque clique et faire disparaitre ses éléments.
+        On a besoin d'un set up au préalable, ainsi que de la définition d'une fonction qui
+        permet de constater la visibilité du panneau.
+        Attention: le test ne s'exécute pas dans le cas de CI (test graphique).
+         */
+        // Arrange
         JPanelFixture panel = window.panel(CollapsiblePanel.class.getSimpleName());
+
+        // Act
         panel.requireVisible();
 
-        // Initially collapsed
+        // Assert
+        // Initiallement rétracté
         assertFalse(hasVisibleComponents(panel), "Panel should be initially collapsed");
 
-        // Click to expand
+        // Cliquer pour développer
         panel.click();
         assertTrue(hasVisibleComponents(panel), "Panel should be expanded after click");
 
-        // Click to collapse again
+        // Cliquer pour rétracter de nouveau
         panel.click();
         assertFalse(hasVisibleComponents(panel), "Panel should be collapsed after second click");
     }
 
     private boolean hasVisibleComponents(JPanelFixture panel) {
-        // Check if any components inside the panel are visible
+        // Vérifie s'il y a au moins un composant visible sur le panneau
         return panel.target().getComponents().length > 0 && panel.target().getComponent(0).isVisible();
     }
 }

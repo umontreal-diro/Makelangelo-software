@@ -29,11 +29,11 @@ public class DialogAboutTest {
         aboutDialog.setSize(new Dimension(400, 300));
         aboutDialog.setLocationRelativeTo(null);
 
-        // Display the dialog
+        // Affichage de la boite de dialogue
         SwingUtilities.invokeLater(() -> dialogAbout.display(aboutDialog, "1.0.0", "hash-123456"));
 
         dialog = new DialogFixture(robot, aboutDialog);
-        dialog.show(); // shows the dialog to test
+        dialog.show(); // affiche le dialogue à tester
     }
 
     @AfterEach
@@ -43,6 +43,15 @@ public class DialogAboutTest {
 
     @Test
     public void testDialogComponents() {
+        /* Motivations: On veut vérifier la présence d'éléments dans la boite de dialogue 'DialogAbout'.
+        Dans l'ordre: la boite en elle-même, ensuite un élément avec pour label:
+        'DialogAbout.AboutHTML', et un bouton 'OK' sur lequel on clique pour finalement
+        fermer la boite de dialogue.
+        Attention: le test ne s'exécute pas dans le cas de CI (test graphique).
+         */
+        // Arrange - voir setup
+
+        // Act and Assert
         dialog.requireVisible();
         dialog.label("DialogAbout.AboutHTML").requireVisible();
         dialog.button("OK").requireVisible().click();

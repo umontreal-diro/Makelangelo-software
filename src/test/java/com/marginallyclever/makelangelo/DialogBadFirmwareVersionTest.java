@@ -28,11 +28,11 @@ public class DialogBadFirmwareVersionTest {
         badFirmwareDialog.setSize(400, 200);
         badFirmwareDialog.setLocationRelativeTo(null);
 
-        // Display the dialog
+        // Affichage de la boite de dialogue
         SwingUtilities.invokeLater(() -> dialogBadFirmwareVersion.display(badFirmwareDialog, "1.0.0"));
 
         dialog = new DialogFixture(robot, badFirmwareDialog);
-        dialog.show(); // shows the dialog to test
+        dialog.show(); // affiche le dialogue à tester
     }
 
     @AfterEach
@@ -42,6 +42,15 @@ public class DialogBadFirmwareVersionTest {
 
     @Test
     public void testDialogComponents() {
+        /* Motivations: On veut vérifier la présence d'éléments dans la boite de dialogue
+        'DialogBadFilmwareVersion'. Dans l'ordre: la boite en elle-même, ensuite un élément
+        avec pour label: 'DialogBadFirmwareVersion.Message', et un bouton 'OK' sur lequel on
+        clique pour finalement fermer la boite de dialogue.
+        Attention: le test ne s'exécute pas dans le cas de CI (test graphique).
+         */
+        // Arrange - voir setup
+
+        // Act and Assert
         dialog.requireVisible();
         dialog.label("DialogBadFirmwareVersion.Message").requireVisible();
         dialog.button("OK").requireVisible().click();
